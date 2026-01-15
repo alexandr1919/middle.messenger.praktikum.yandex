@@ -1,0 +1,26 @@
+<html>
+  <body class="inner-wrapper">
+    {{> home/sidebar/sidebar isHome=true}}
+    <section class="main-menu">
+      <input class="main-menu__search text-input" placeholder="Search"/>
+      <ul class="chat-list">
+        {{#each chatList}}
+          <li class="chat-list__item">{{name}} - {{preview}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section class="chat">
+      <div class="chat__user">{{chat.user}}</div>
+      <ul class="chat__messages">
+        {{#each chat.messages}}
+          <li class="message">
+            <span>{{text}}</span>
+            <span class="message__time">{{time}}</span>
+          </li>
+        {{/each}}
+      </ul>
+      <input class="chat__input" placeholder="Write a message..."/>
+    </section>
+  </body>
+  <script type="module" src="/main.js"></script>
+</html>
