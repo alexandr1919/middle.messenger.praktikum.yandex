@@ -1,9 +1,24 @@
 import { resolve } from 'path';
+import { globSync } from 'glob';
 import handlebars from 'vite-plugin-handlebars';
 
 export default {
   root: resolve(__dirname, 'src'),
-  build: { outDir: resolve(__dirname, 'dist'), sourcemap: true },
+  build: {
+    outDir: resolve(__dirname, 'dist'),
+    sourcemap: true,
+    rollupOptions: {
+      // Treat every .html file in src as an entry (not just index.html)
+      input: Object.fromEntries(
+        globSync('src/**/*.html').map((file) => {
+          // file like: src/pages/about/index.html
+          // name like: pages/about/index
+          const name = file.replace(/^src\//, '').replace(/\.html$/, '');
+          return [name, resolve(__dirname, file)];
+        })
+      ),
+    },
+  },
   preview: { outDir: resolve(__dirname, 'dist'), port: 3000, open: true },
   server: { port: 3000, open: true },
   plugins: [
