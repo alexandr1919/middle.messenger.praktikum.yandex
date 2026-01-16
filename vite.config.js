@@ -8,11 +8,8 @@ export default {
     outDir: resolve(__dirname, 'dist'),
     sourcemap: true,
     rollupOptions: {
-      // Treat every .html file in src as an entry (not just index.html)
       input: Object.fromEntries(
         globSync('src/**/*.html').map((file) => {
-          // file like: src/pages/about/index.html
-          // name like: pages/about/index
           const name = file.replace(/^src\//, '').replace(/\.html$/, '');
           return [name, resolve(__dirname, file)];
         })
