@@ -34,10 +34,12 @@ ul {
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-height: 100%;
 }
 
 .inner-wrapper {
     display: flex;
+    min-height: 100%;
 }
 
 .modal {
@@ -49,6 +51,13 @@ ul {
     padding: 20px 40px;
     background-color: var(--color-base-content-background);
     border-radius: 8px;
+}
+
+.modal__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .modal__title {
@@ -138,12 +147,18 @@ ul {
     font-size: 10px;
 }
 
+.chat__form {
+    width: 100%;
+    margin: 0;
+}
+
 .chat__input {
     padding: 16px;
     background-color: var(--color-base-content-background);
     outline: none;
     border: none;
     color: inherit;
+    width: 100%;
 }
 
 .settings-form {
