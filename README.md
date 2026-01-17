@@ -9,12 +9,9 @@ Run build: 'npm run build'
 
 
 
-Netlify domain:
+Netlify domain: https://whimsical-brigadeiros-55dece.netlify.app
 
-https://whimsical-brigadeiros-55dece.netlify.app/
-
-
-Login page: https:/whimsical-brigadeiros-55dece.netlify.app
+Login page: https://whimsical-brigadeiros-55dece.netlify.app
 
 Registartion page: https://whimsical-brigadeiros-55dece.netlify.app/pages/error/pages/auth/registration.html
 
@@ -26,8 +23,5 @@ Settings page: https://whimsical-brigadeiros-55dece.netlify.app/pages/settings/s
 
 Internal server https://whimsical-brigadeiros-55dece.netlify.app/pages/error/internal-error.html
 
-
-Layouts:
-
-https://www.figma.com/design/zOA1JdQVAB8oMPIQnJNcl1/Chat?node-id=1-4&p=f&t=00BNXinffcXeyVvV-0
+Layouts: https://www.figma.com/design/zOA1JdQVAB8oMPIQnJNcl1/Chat?node-id=1-4&p=f&t=00BNXinffcXeyVvV-0
 
