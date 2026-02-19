@@ -1,0 +1,7 @@
+{
+    "css.format.preserveNewLines": true,
+    "css.format.enable": false,
+    "css.format.newlineBetweenSelectors": true,
+    "css.format.newlineBetweenRules": true,
+    "files.insertFinalNewline": true
+}
