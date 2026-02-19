@@ -2,7 +2,6 @@ import { Login } from './pages/auth/login';
 import { Registration } from './pages/auth/registration';
 import { BaseLayout } from './shared/ui/base-layout/BaseLayout';
 import { render } from './shared/utils/ui-handlers';
-import { BaseHomeLayout } from './pages/home/base-home-layout/BaseHomeLayout';
 import { ChatsLayout } from './pages/home/pages/chats/chats-layout';
 import { Sidebar } from './pages/home/components/sidebar';
 import { Settings } from './pages/home/pages/settings';
@@ -10,6 +9,7 @@ import { Page404 } from './pages/error/page-404';
 import './styles.css';
 
 import type { Block } from './shared/block';
+import { BaseHomeLayout } from './pages/home/base-home-layout';
 
 const getBaseLayout = (content: string | number | Block) => {
   return new BaseLayout({

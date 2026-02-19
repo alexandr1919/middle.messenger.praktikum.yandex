@@ -24,6 +24,7 @@ export default defineConfig(
       }
     },
     rules: {
+      'eol-last': ['error', 'always'],
       'comma-dangle': ['error', 'never'],
       indent: ['error', 2],
       quotes: ['error', 'single'],
