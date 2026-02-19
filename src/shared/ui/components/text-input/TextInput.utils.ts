@@ -1,4 +1,4 @@
-import { EventKey, WithEvents } from '../../../block/Block.types';
+import { WithEvents } from '../../../block/Block.types';
 import { Validators } from '../../../utils/validators';
 
 export type TextInputProps = {

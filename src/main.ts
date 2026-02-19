@@ -19,7 +19,7 @@ const getBaseLayout = (content: string | number | Block) => {
   });
 };
 
-const getBaseHomeLayout = (content: string | number | Block, pathname: string) => {
+const getBaseHomeLayout = (content: string | number | Block) => {
   return new BaseHomeLayout({
     children: {
       sidebar: new Sidebar(),
@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     pageComponent = getBaseLayout(new Registration());
   }
   if (pathname === '/home/chats') {
-    pageComponent = getBaseHomeLayout(new ChatsLayout(), pathname);
+    pageComponent = getBaseHomeLayout(new ChatsLayout());
   }
   if (pathname === '/home/settings') {
-    pageComponent = getBaseHomeLayout(new Settings(), pathname);
+    pageComponent = getBaseHomeLayout(new Settings());
   }
   if (!pageComponent) {
     pageComponent = getBaseLayout(new Page404());
