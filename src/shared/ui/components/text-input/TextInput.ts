@@ -17,8 +17,6 @@ export class TextInput extends Block {
   constructor(props: TextInputProps) {
     const { name, placeholder, type, validators, value } = props;
 
-    let inputBlock: Block;
-
     const events: Record<string, EventListener> = {};
     if (validators) {
       Object.entries(validators).forEach(([event, rules]) => {
@@ -34,14 +32,13 @@ export class TextInput extends Block {
         };
       });
     }
-
-    inputBlock = new Block('input', {
-      attributes: { name, placeholder, type: type || 'text', class: 'text-input', value: value || '' },
-      ...events
-    });
-
     super('div', {
-      children: { input: inputBlock }
+      children: {
+        input: new Block('input', {
+          attributes: { name, placeholder, type: type || 'text', class: 'text-input', value: value || '' },
+          ...events
+        })
+      }
     });
     this.validators = validators;
     this.name = name;

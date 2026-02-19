@@ -1,7 +1,6 @@
 import { Block } from '../../../../../../../../shared/block';
 
 import { MessageInputTemplate } from './MessageInput.tmpl';
-import './message-input.css';
 
 export class MessageInput extends Block {
   constructor() {

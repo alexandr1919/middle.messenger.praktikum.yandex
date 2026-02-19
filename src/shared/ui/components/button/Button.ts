@@ -9,7 +9,7 @@ export class Button extends Block {
     const { text, type } = props;
     super('button', {
       attributes: { class: 'button', type: type || 'button' },
-      children: { text }
+      children: { text: text ?? '' }
     });
   }
 

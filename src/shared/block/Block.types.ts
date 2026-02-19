@@ -8,7 +8,7 @@ export type WithEvents = {
 
 export type BlockProps = {
   attributes?: Record<string, string>;
-  children?: Record<string, Block | string | number>;
+  children?: Record<string, Block | Block[] | string | number>;
 } & WithEvents;
 
 export type BlockEvent = {
