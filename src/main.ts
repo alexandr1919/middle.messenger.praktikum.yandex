@@ -22,10 +22,7 @@ const getBaseLayout = (content: string | number | Block) => {
 const getBaseHomeLayout = (content: string | number | Block, pathname: string) => {
   return new BaseHomeLayout({
     children: {
-      sidebar: new Sidebar({
-        isChats: pathname === '/home/chats',
-        isSettings: pathname === '/home/settings'
-      }),
+      sidebar: new Sidebar(),
       content
     }
   });
