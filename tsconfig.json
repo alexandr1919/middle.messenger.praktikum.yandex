@@ -10,7 +10,8 @@
     "moduleDetection": "force",
     "noEmit": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "noUnusedLocals": true
   },
   "include": ["src"]
 }
