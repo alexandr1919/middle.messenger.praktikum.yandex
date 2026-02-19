@@ -1,0 +1,17 @@
+.settings__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+
+.settings__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings__item label {
+    width: 100px;
+    text-align: left;
+}

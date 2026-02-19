@@ -1,0 +1,14 @@
+.text-input {
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.text-input:focus {
+    outline: none;
+    border: 2px solid var(--color-active);
+}
+
+.text-input--error {
+    border: 2px solid var(--color-error);
+}

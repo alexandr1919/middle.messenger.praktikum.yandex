@@ -1,0 +1,14 @@
+.message {
+    position: relative;
+    max-width: 460px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--color-base-content-background);
+}
+
+.message__time {
+    position: absolute;
+    top: calc(100% - 18px);
+    left: calc(100% - 40px);
+    font-size: 10px;
+}

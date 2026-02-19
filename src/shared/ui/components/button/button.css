@@ -1,0 +1,12 @@
+.button {
+    display: block;
+    padding: 8px;
+    width: 120px;
+    text-align: center;
+    border: none;
+    color: var(--color-base-font);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--color-secondary-background);
+}

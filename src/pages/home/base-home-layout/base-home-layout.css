@@ -1,0 +1,11 @@
+.inner-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home-wrapper {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,35 @@
+.burger {
+    width: 38px;
+    height: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    border: none;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    gap: 16px;
+    padding: 16px 0;
+    background: var(--color-secondary-background);
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 24px;
+}
