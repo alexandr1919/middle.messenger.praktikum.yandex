@@ -7,4 +7,5 @@ export type TextInputProps = {
   type?: string;
   value?: string;
   validators?: Validators;
+  errorMessage?: string;
 } & WithEvents;

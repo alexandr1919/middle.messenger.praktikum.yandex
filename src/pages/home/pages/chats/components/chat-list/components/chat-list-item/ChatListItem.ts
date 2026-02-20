@@ -12,7 +12,6 @@ export class ChatListItem extends Block {
   }
 
   render() {
-    // console.log(this.name, this.preview);
     return this.compile(ChatListItemTemplate);
   }
 }

@@ -5,7 +5,6 @@ import { UserBarProps } from './UserBar.types';
 
 export class UserBar extends Block {
   constructor(props: UserBarProps) {
-    console.log(props);
     const { user } = props;
     super('div', {
       attributes: { class: 'chat__user' },

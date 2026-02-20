@@ -21,7 +21,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
+    min-width: 74px;
+    max-width: 74px;
     gap: 16px;
     padding: 16px 0;
     background: var(--color-secondary-background);

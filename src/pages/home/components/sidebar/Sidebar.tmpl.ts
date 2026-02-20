@@ -1,4 +1,4 @@
-export const SidebarTemplate = /*html*/ `<button class="burger" aria-label="Menu" role="button" tabindex="0">
+export const SidebarTemplate = `<button class="burger" aria-label="Menu" role="button" tabindex="0">
     <span></span>
     <span></span>
     <span></span>

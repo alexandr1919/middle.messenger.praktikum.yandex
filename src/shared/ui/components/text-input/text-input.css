@@ -1,3 +1,8 @@
+.text-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .text-input {
     padding: 6px;
     border: 2px solid transparent;
@@ -11,4 +16,14 @@
 
 .text-input--error {
     border: 2px solid var(--color-error);
+}
+
+.text-input__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 2px;
+    font-size: 10px;
+    color: var(--color-error);
+    white-space: nowrap;
 }

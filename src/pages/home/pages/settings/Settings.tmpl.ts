@@ -1,4 +1,4 @@
-export const SettingsFormTemplate = /*html*/ `
+export const SettingsFormTemplate = `
 <div class='settings__item'>
   <label for='login'>Login</label>
   {{{login}}}

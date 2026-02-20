@@ -1,5 +1,15 @@
 Simple messenger app prototype.
 
+Tools:
+
+- Vite — bundler and dev server
+- TypeScript — static typing
+- Handlebars — templating
+- ESLint — linting
+- Prettier — code formatting
+- Stylelint — CSS linting
+- PostCSS — CSS processing
+
 Run dev server: 'npm run dev'
 
 Run preview and server: 'npm run start'

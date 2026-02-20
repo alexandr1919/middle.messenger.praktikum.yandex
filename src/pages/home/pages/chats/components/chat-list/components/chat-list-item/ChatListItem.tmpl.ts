@@ -1,1 +1,1 @@
-export const ChatListItemTemplate = /*html*/ `{{{name}}} - {{{preview}}}`;
+export const ChatListItemTemplate = `{{{name}}} - {{{preview}}}`;

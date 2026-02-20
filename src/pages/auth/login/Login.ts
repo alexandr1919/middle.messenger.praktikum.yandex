@@ -2,8 +2,9 @@ import { BaseLink } from '../../../shared/ui/components/base-link';
 import { Button } from '../../../shared/ui/components/button/Button';
 import { TextInput } from '../../../shared/ui/components/text-input';
 import { BaseForm } from '../base-form/BaseForm';
-import { LoginFormTemplate } from './Login.tmpl';
 import { loginFormValidators } from '../../../shared/utils/validators';
+
+import { LoginFormTemplate } from './Login.tmpl';
 
 export class Login extends BaseForm {
   formValues: string[] = ['login', 'password'];

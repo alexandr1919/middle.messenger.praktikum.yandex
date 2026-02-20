@@ -1,4 +1,4 @@
-export const RegistrationFormTemplate = /*html*/ `
+export const RegistrationFormTemplate = `
     {{{title}}}
     {{{firstName}}}
     {{{secondName}}}

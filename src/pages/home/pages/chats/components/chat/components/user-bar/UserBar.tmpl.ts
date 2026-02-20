@@ -1,1 +1,1 @@
-export const UserBarTemplate = /*html*/ `{{{user}}}`;
+export const UserBarTemplate = `{{{user}}}`;

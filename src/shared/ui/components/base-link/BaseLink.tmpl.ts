@@ -1,1 +1,1 @@
-export const BaseLinkTemplate = /*html*/ `{{{text}}}`;
+export const BaseLinkTemplate = `{{{text}}}`;

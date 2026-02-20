@@ -9,7 +9,7 @@ export class MessageInput extends Block {
       onSubmit(event: Event) {
         event.preventDefault();
         const value = (document.getElementsByName('message')[0] as HTMLInputElement).value;
-        console.log('Message: ', value);
+        value && console.log('Message sent:', value);
       }
     });
   }
