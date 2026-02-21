@@ -1,0 +1,30 @@
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+    background-color: var(--color-base-content-background);
+}
+
+.main-menu__search {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list__item {
+    padding: 16px 12px;
+    cursor: pointer;
+}
+
+.chat-list__item:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-list__item:hover {
+    background-color: var(--color-secondary-background);
+}

@@ -1,0 +1,34 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.chat__user {
+    padding: 16px;
+    background-color: var(--color-base-content-background);
+}
+
+.chat__messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    flex-grow: 1;
+    gap: 16px;
+    background-color: var(--color-secondary-background);
+}
+
+.chat__form {
+    width: 100%;
+    margin: 0;
+}
+
+.chat__input {
+    padding: 16px;
+    background-color: var(--color-base-content-background);
+    outline: none;
+    border: none;
+    color: inherit;
+    width: 100%;
+}
