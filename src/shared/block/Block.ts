@@ -8,6 +8,7 @@ import { BlockEvent, BlockProps } from './Block.types';
 import { EVENTS_LIST, getBlockEventsFromProps, toggleBlockEvents } from './Block.utils';
 
 export class Block {
+  isMounted = false;
   static EVENTS = EVENTS_LIST;
 
   props: BlockProps = {};
@@ -28,7 +29,6 @@ export class Block {
     this._children = children || {};
     this._attributes = this.makePropsProxy({ ...attributes, __id: this._id });
     this.props = propsAndChildren;
-
     this.registerEvents();
     this._eventBus?.emit(Block.EVENTS.INIT);
   }
@@ -48,6 +48,11 @@ export class Block {
 
   _componentDidMount(): void {
     this.componentDidMount();
+    this.isMounted = true;
+  }
+
+  getChild(key: string): Block | Block[] | string | number | undefined {
+    return this._children[key];
   }
 
   componentDidMount(): void {}
@@ -133,7 +138,6 @@ export class Block {
 
   compile(template: string, props: Record<string, unknown> = {}): DocumentFragment {
     const propsAndStubs: Record<string, unknown> = { ...props };
-
     Object.entries(this._children).forEach(([key, child]) => {
       if (Array.isArray(child)) {
         propsAndStubs[key] = child.map((c) => `<div data-id="${c._id}"></div>`);
@@ -159,6 +163,7 @@ export class Block {
           }
           const content = c.getContent();
           if (content) stub.replaceWith(content);
+          if (!c.isMounted) c.dispatchComponentDidMount();
         });
       } else if (child instanceof Block) {
         const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
@@ -168,9 +173,24 @@ export class Block {
         }
         const content = child.getContent();
         if (content) stub.replaceWith(content);
+        if (!child.isMounted) child.dispatchComponentDidMount();
       }
     });
 
     return fragment.content;
+  }
+
+  show(): void {
+    this.isMounted = true;
+    if (this._element) {
+      this._element.style.display = 'block';
+    }
+  }
+
+  hide(): void {
+    this.isMounted = false;
+    if (this._element) {
+      this._element.style.display = 'none';
+    }
   }
 }

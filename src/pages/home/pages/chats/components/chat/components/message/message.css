@@ -4,6 +4,9 @@
     padding: 16px;
     border-radius: 16px;
     background-color: var(--color-base-content-background);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .message__time {
@@ -11,4 +14,9 @@
     top: calc(100% - 18px);
     left: calc(100% - 40px);
     font-size: 10px;
+}
+
+.message__user {
+    font-size: 18px;
+    color: var(--color-active);
 }

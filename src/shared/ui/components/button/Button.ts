@@ -1,14 +1,15 @@
 import { Block } from '../../../block';
-import { ButtonTemplate } from './Button.tmpl';
 
+import { ButtonTemplate } from './Button.tmpl';
 import { ButtonProps } from './Button.types';
 import './button.css';
 
 export class Button extends Block {
   constructor(props: ButtonProps) {
-    const { text, type } = props;
+    const { text, type, className, ...rest } = props;
     super('button', {
-      attributes: { class: 'button', type: type || 'button' },
+      ...rest,
+      attributes: { class: ['button', className].filter(Boolean).join(' '), type: type || 'button' },
       children: { text: text ?? '' }
     });
   }

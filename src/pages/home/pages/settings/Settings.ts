@@ -1,54 +1,24 @@
-import { Button } from '../../../../shared/ui/components/button/Button';
-import { TextInput } from '../../../../shared/ui/components/text-input';
-import { loginValidators, nameValidators, phoneValidators } from '../../../../shared/utils/validators';
-import { BaseForm } from '../../../auth/base-form';
+import { Block } from '../../../../shared/block';
 
-import { SettingsFormTemplate } from './Settings.tmpl';
+import { ChangeAvatar } from './components/change-avatar';
+import { ChangePassword } from './components/change-password';
+import { UserSettings } from './components/user-settings';
+import { SettingsTemplate } from './Settings.tmpl';
 import './settings.css';
 
-export class Settings extends BaseForm {
-  formValues: string[] = ['login', 'first_name', 'second_name', 'display_name', 'phone'];
-
+export class Settings extends Block {
   constructor() {
-    super({
-      class: 'settings__form',
+    super('div', {
+      attributes: { class: 'settings__content' },
       children: {
-        login: new TextInput({
-          name: 'login',
-          placeholder: 'Login',
-          validators: loginValidators,
-          value: 'user_login'
-        }),
-        firstName: new TextInput({
-          name: 'first_name',
-          placeholder: 'First name',
-          validators: nameValidators,
-          value: 'First name'
-        }),
-        secondName: new TextInput({
-          name: 'second_name',
-          placeholder: 'Second name',
-          validators: nameValidators,
-          value: 'Second name'
-        }),
-        displayName: new TextInput({
-          name: 'display_name',
-          placeholder: 'Display name',
-          value: 'displayName'
-        }),
-        phone: new TextInput({
-          name: 'phone',
-          placeholder: 'Phone',
-          type: 'tel',
-          validators: phoneValidators,
-          value: '+12345678910'
-        }),
-        button: new Button({ text: 'Save', type: 'submit' })
+        changeAvatar: new ChangeAvatar(),
+        userSettings: new UserSettings(),
+        changePassword: new ChangePassword()
       }
     });
   }
 
   render() {
-    return this.compile(SettingsFormTemplate);
+    return this.compile(SettingsTemplate);
   }
 }

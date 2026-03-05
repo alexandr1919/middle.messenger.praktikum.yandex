@@ -1,6 +1,9 @@
 import { Block } from '../../../../../../../../shared/block';
+import { ChatsController } from '../../../../chats-layout/Chats.controller';
 
 import { MessageInputTemplate } from './MessageInput.tmpl';
+
+const chatsController = ChatsController.getInstance();
 
 export class MessageInput extends Block {
   constructor() {
@@ -8,8 +11,11 @@ export class MessageInput extends Block {
       attributes: { class: 'chat__form' },
       onSubmit(event: Event) {
         event.preventDefault();
-        const value = (document.getElementsByName('message')[0] as HTMLInputElement).value;
-        value && console.log('Message sent:', value);
+        const input = (event.target as HTMLFormElement).elements.namedItem('message') as HTMLInputElement;
+        const value = input?.value.trim();
+        if (!value) return;
+        chatsController.sendMessage(value);
+        input.value = '';
       }
     });
   }

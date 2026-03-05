@@ -1,0 +1,32 @@
+.change-avatar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.change-avatar__preview {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.change-avatar__image,
+.change-avatar__placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-avatar__placeholder {
+    fill: var(--color-base-font);
+}
+
+.change-avatar__input {
+    display: none;
+}
+
+.change-avatar__button {
+    min-width: 80px;
+}

@@ -1,5 +1,7 @@
-export type ButtonProps = {
+import { BlockProps } from '../../../block/Block.types';
+
+export type ButtonProps = BlockProps & {
   text?: string;
-  class?: string;
   type?: string;
+  className?: string;
 };

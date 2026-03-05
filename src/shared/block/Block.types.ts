@@ -14,3 +14,5 @@ export type BlockProps = {
 export type BlockEvent = {
   [key in EventKey]?: EventListener;
 };
+
+export type BlockChild = Block | Block[] | string | number | undefined;
