@@ -1,5 +1,5 @@
-import Router from '../router/Router';
-import { PATHS } from '../router/Router.utils';
+import { Router, PATHS } from '../router';
+import Store from '../store/Store';
 
 import { UserApi } from './User.api';
 import { UpdatePasswordPayload, UpdateProfilePayload, UserModel } from './User.types';
@@ -29,6 +29,7 @@ export class UserController {
   async logout(): Promise<void> {
     await userApi.logout();
     localStorage.clear();
+    Store.reset();
     Router.getInstance().go(PATHS.LOGIN);
   }
 
