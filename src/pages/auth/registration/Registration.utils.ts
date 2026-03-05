@@ -8,7 +8,7 @@ import {
   passwordValidators,
   phoneValidators
 } from '../../../shared/utils/validators';
-import { PATHS } from '../../../shared/router/paths';
+import { PATHS } from '../../../shared/router';
 
 export const createRegistrationFormChildren = () => ({
   title: 'Registration',

@@ -2,7 +2,7 @@ import { BaseLink } from '../../../shared/ui/components/base-link';
 import { Button } from '../../../shared/ui/components/button/Button';
 import { TextInput } from '../../../shared/ui/components/text-input';
 import { loginValidators, passwordValidators } from '../../../shared/utils/validators';
-import { PATHS } from '../../../shared/router/paths';
+import { PATHS } from '../../../shared/router';
 
 export const createLoginFormChildren = () => ({
   title: 'Login',

@@ -1,6 +1,4 @@
-import Router from './shared/router/Router';
-import { RouteConfig } from './shared/router/Router.types';
-import { ROUTES } from './shared/router/Router.utils';
+import { Router, RouteConfig, ROUTES } from './shared/router';
 import './styles.css';
 
 document.addEventListener('DOMContentLoaded', () => {

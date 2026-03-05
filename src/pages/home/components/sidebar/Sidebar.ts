@@ -1,6 +1,5 @@
 import { Block } from '../../../../shared/block';
-import Router from '../../../../shared/router/Router';
-import { PATHS } from '../../../../shared/router/Router.utils';
+import { Router, PATHS } from '../../../../shared/router';
 import Store from '../../../../shared/store/Store';
 import { StoreEvents } from '../../../../shared/store/Store.utils';
 import { UserController } from '../../../../shared/user';

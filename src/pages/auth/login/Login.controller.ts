@@ -1,5 +1,4 @@
-import Router from '../../../shared/router/Router';
-import { PATHS } from '../../../shared/router/Router.utils';
+import { Router, PATHS } from '../../../shared/router';
 import { UserController } from '../../../shared/user';
 
 import { LoginApi } from './Login.api';
