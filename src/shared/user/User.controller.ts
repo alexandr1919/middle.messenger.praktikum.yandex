@@ -33,7 +33,7 @@ export class UserController {
 
   async logout(): Promise<void> {
     await userApi.logout();
-    Store.set('user', null);
+    Store.reset();
     Router.getInstance().go(PATHS.LOGIN);
   }
 
