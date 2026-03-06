@@ -10,8 +10,7 @@ const userController = new UserController();
 export class LoginController {
   public async login(data: Partial<LoginFormModel>) {
     await loginApi.create(data);
-    const user = await userController.getUser();
-    localStorage.setItem('user', JSON.stringify(user));
+    await userController.fetchUser();
     Router.getInstance().go(PATHS.CHATS);
   }
 }

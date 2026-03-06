@@ -1,6 +1,7 @@
 import { Block } from '../../../../../../shared/block';
 import '../../../../../../shared/ui/components/button/button.css';
-import { UserController, UserModel } from '../../../../../../shared/user';
+import Store from '../../../../../../shared/store/Store';
+import { UserController } from '../../../../../../shared/user';
 
 import { ChangeAvatarTemplate } from './ChangeAvatar.tmpl';
 import './change-avatar.css';
@@ -38,8 +39,7 @@ export class ChangeAvatar extends Block {
   }
 
   render() {
-    const storedUser = localStorage.getItem('user');
-    const user = storedUser ? (JSON.parse(storedUser) as UserModel) : null;
+    const user = Store.getState().user;
     const avatarSrc = user?.avatar ? RESOURCES_URL + user.avatar : '';
     return this.compile(ChangeAvatarTemplate, { avatarSrc, error: this.error });
   }

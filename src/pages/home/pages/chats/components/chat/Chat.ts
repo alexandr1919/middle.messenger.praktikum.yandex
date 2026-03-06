@@ -30,9 +30,9 @@ export class Chat extends Block {
     });
 
     void chatsController.getChatToken(chatId).then((token) => {
-      const user = JSON.parse(localStorage.getItem('user') ?? '{}') as { id?: number };
-      if (user.id) {
-        chatsController.connectToChat(user.id, chatId, token);
+      const userId = Store.getState().user?.id;
+      if (userId) {
+        chatsController.connectToChat(userId, chatId, token);
       }
     });
 

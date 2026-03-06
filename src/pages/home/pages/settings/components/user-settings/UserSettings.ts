@@ -1,6 +1,7 @@
 import { connect } from '../../../../../../shared/connector/connector';
+import Store from '../../../../../../shared/store/Store';
 import { StoreState } from '../../../../../../shared/store/Store.types';
-import { UpdateProfilePayload, UserController, UserModel } from '../../../../../../shared/user';
+import { UpdateProfilePayload, UserController } from '../../../../../../shared/user';
 import { BaseForm } from '../../../../../auth/base-form';
 
 import { UserSettingsTemplate } from './UserSettings.tmpl';
@@ -18,8 +19,7 @@ class UserSettingsBase extends BaseForm<UserSettingsFormModel> {
   formValues: string[] = ['login', 'first_name', 'second_name', 'display_name', 'phone'];
 
   constructor() {
-    const storedUser = localStorage.getItem('user');
-    const user = storedUser ? (JSON.parse(storedUser) as UserModel) : undefined;
+    const user = Store.getState().user ?? undefined;
     super({
       class: 'settings__form',
       children: getUserSettingsFormChildren(user)
@@ -27,8 +27,7 @@ class UserSettingsBase extends BaseForm<UserSettingsFormModel> {
   }
 
   async handleSubmit(_data: Partial<UserSettingsFormModel>): Promise<void> {
-    const storedUser = localStorage.getItem('user');
-    const user = storedUser ? (JSON.parse(storedUser) as UserModel) : null;
+    const user = Store.getState().user;
     await new UserController().updateUser({ ..._data, email: user?.email ?? '' } as UpdateProfilePayload);
     this.updateSuccess('Profile saved!');
   }

@@ -7,6 +7,11 @@ import { UpdatePasswordPayload, UpdateProfilePayload, UserModel } from './User.t
 const userApi = new UserApi();
 
 export class UserController {
+  async fetchUser(): Promise<void> {
+    const res = await userApi.getUser();
+    Store.set('user', res.data);
+  }
+
   async getUser(): Promise<UserModel> {
     const res = await userApi.getUser();
     return res.data as UserModel;
@@ -14,12 +19,12 @@ export class UserController {
 
   async updateUser(data: UpdateProfilePayload): Promise<void> {
     const res = await userApi.updateProfile(data);
-    localStorage.setItem('user', JSON.stringify(res.data));
+    Store.set('user', res.data);
   }
 
   async updateAvatar(data: FormData): Promise<void> {
     const res = await userApi.updateAvatar(data);
-    localStorage.setItem('user', JSON.stringify(res.data));
+    Store.set('user', res.data);
   }
 
   async updatePassword(data: UpdatePasswordPayload): Promise<void> {
@@ -28,8 +33,7 @@ export class UserController {
 
   async logout(): Promise<void> {
     await userApi.logout();
-    localStorage.clear();
-    Store.reset();
+    Store.set('user', null);
     Router.getInstance().go(PATHS.LOGIN);
   }
 

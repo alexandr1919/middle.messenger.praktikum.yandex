@@ -1,4 +1,5 @@
 import { Page404 } from '../../pages/error/page-404';
+import Store from '../store/Store';
 
 import Route from './Route';
 import { RouteConfig } from './Router.types';
@@ -36,10 +37,10 @@ export default class Router {
     let route = this.getRoute(pathname);
     if (!route) {
       route = new Route({ pathname: '', block: getBaseLayout(Page404) });
-    } else if (!localStorage.getItem('user') && !route._isPublic) {
+    } else if (!Store.getState().user && !route._isPublic) {
       route = new Route(DEFAULT_ROUTE);
       this.history.pushState({}, '', PATHS.LOGIN);
-    } else if (localStorage.getItem('user') && route._isPublic) {
+    } else if (Store.getState().user && route._isPublic) {
       route = new Route(DEFAULT_LOGGED_IN_ROUTE);
       this.history.pushState({}, '', PATHS.CHATS);
     }

@@ -10,8 +10,7 @@ const userController = new UserController();
 export class RegistrationController {
   public async signUp(data: Partial<RegistrationFormModel>) {
     await registrationApi.create(data);
-    const user = await userController.getUser();
-    localStorage.setItem('user', JSON.stringify(user));
+    await userController.fetchUser();
     Router.getInstance().go(PATHS.CHATS);
   }
 }
