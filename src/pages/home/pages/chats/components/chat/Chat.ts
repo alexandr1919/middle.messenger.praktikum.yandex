@@ -24,17 +24,17 @@ export class Chat extends Block {
 
     Store.set('messages', []);
 
-    void chatsController.getChatUsers(chatId).then((users) => {
-      const membersMap = Object.fromEntries(users.map((u) => [u.id, u.login]));
-      Store.set('chatMembers', membersMap);
-    });
+    void Promise.all([chatsController.getChatUsers(chatId), chatsController.getChatToken(chatId)]).then(
+      ([users, token]) => {
+        const membersMap = Object.fromEntries(users.map((u) => [u.id, u.login]));
+        Store.set('chatMembers', membersMap);
 
-    void chatsController.getChatToken(chatId).then((token) => {
-      const userId = Store.getState().user?.id;
-      if (userId) {
-        chatsController.connectToChat(userId, chatId, token);
+        const userId = Store.getState().user?.id;
+        if (userId) {
+          chatsController.connectToChat(userId, chatId, token);
+        }
       }
-    });
+    );
 
     const onMessagesUpdate = () => {
       if (Store.getState().activeChat?.id !== chatId) {
@@ -46,6 +46,15 @@ export class Chat extends Block {
       if (!raw) return;
 
       const members = (Store.getState().chatMembers ?? {}) as Record<number, string>;
+      const hasUnknownUser = raw.some((m) => m.type === 'message' && !(m.user_id in members));
+
+      if (hasUnknownUser) {
+        void chatsController.getChatUsers(chatId).then((users) => {
+          const membersMap = Object.fromEntries(users.map((u) => [u.id, u.login]));
+          Store.set('chatMembers', membersMap);
+        });
+        return;
+      }
 
       this._children.messages = raw
         .filter((m) => m.type === 'message')
