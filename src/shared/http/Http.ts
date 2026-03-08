@@ -30,14 +30,14 @@ export class Http {
   }
 
   private request<T>(url: string, method: HttpMethod, options: HttpOptions = {}): Promise<HttpResponse<T>> {
-    const { headers = {}, data, timeout = DEFAULT_TIMEOUT, withCredentials = false } = options;
+    const { headers = {}, data, timeout = DEFAULT_TIMEOUT, withCredentials = true } = options;
 
     return new Promise<HttpResponse<T>>((resolve, reject) => {
       const xhr = new XMLHttpRequest();
-
       const queryString =
         method === 'GET' && data && !(data instanceof FormData)
-          ? '?' + new URLSearchParams(
+          ? '?' +
+            new URLSearchParams(
               Object.entries(data).reduce<Record<string, string>>((acc, [k, v]) => {
                 acc[k] = String(v);
                 return acc;

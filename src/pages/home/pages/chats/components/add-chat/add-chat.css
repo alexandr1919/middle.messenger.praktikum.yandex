@@ -1,0 +1,4 @@
+.add-chat__form {
+    display: flex;
+    gap: 16px;
+}

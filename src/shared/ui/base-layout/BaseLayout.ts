@@ -1,4 +1,5 @@
 import { Block, BlockProps } from '../../block';
+
 import { BaseLayoutTemplate } from './base-layout.tmpl';
 
 export class BaseLayout extends Block {

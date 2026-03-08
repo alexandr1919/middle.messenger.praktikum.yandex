@@ -37,3 +37,7 @@ ul {
     align-items: center;
     justify-content: center;
 }
+
+form {
+    margin-bottom: 0;
+}

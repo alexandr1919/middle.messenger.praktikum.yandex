@@ -32,5 +32,23 @@
     display: flex;
     flex-direction: column;
     margin-top: 16px;
-    gap: 24px;
+    gap: 30px;
+}
+
+.sidebar__link {
+    cursor: pointer;
+    display: block;
+}
+
+.sidebar__link path {
+    transition: fill 0.2s ease;
+}
+
+.sidebar__link:hover path {
+    fill: rgb(161, 226, 137);
+}
+
+.sidebar__link--disabled {
+    opacity: 0.35;
+    pointer-events: none;
 }

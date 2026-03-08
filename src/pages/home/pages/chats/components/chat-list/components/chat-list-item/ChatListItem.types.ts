@@ -1,4 +1,6 @@
 export type ChatListItemProps = {
-  name: string;
+  id: number;
+  title: string;
   preview: string;
+  unreadCount: number;
 };

@@ -17,7 +17,7 @@ export class TextInput extends Block {
   validators: Validators = {};
   errorMessage = '';
   constructor(props: TextInputProps) {
-    const { name, placeholder, type, validators, value, errorMessage } = props;
+    const { name, placeholder, type, validators, value, errorMessage, className, wrapperClassName } = props;
 
     const events: Record<string, EventListener> = {};
     if (validators) {
@@ -44,9 +44,16 @@ export class TextInput extends Block {
       });
     }
     super('div', {
+      attributes: { class: wrapperClassName ?? 'text-input-wrapper' },
       children: {
         input: new Block('input', {
-          attributes: { name, placeholder, type: type || 'text', class: 'text-input', value: value || '' },
+          attributes: {
+            name,
+            placeholder,
+            type: type || 'text',
+            class: ['text-input', className].filter(Boolean).join(' '),
+            value: value || ''
+          },
           ...events
         })
       }

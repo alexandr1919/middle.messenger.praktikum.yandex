@@ -1,7 +1,7 @@
 export const defaultChats = [
-  { name: 'username_1', preview: 'preview_1_lorem_ipsum_sit_amet' },
-  { name: 'username_2', preview: 'preview_1_lorem_ipsum_sit_amet' },
-  { name: 'username_3', preview: 'preview_1_lorem_ipsum_sit_amet' }
+  { title: 'username_1', preview: 'preview_1_lorem_ipsum_sit_amet' },
+  { title: 'username_2', preview: 'preview_1_lorem_ipsum_sit_amet' },
+  { title: 'username_3', preview: 'preview_1_lorem_ipsum_sit_amet' }
 ];
 
 export const defaultMessages = [

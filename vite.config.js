@@ -1,18 +1,13 @@
 import { resolve } from 'path';
-import { globSync } from 'glob';
 
 export default {
   root: resolve(__dirname, 'src'),
+  appType: 'spa',
   build: {
     outDir: resolve(__dirname, 'dist'),
     sourcemap: true,
     rollupOptions: {
-      input: Object.fromEntries(
-        globSync('src/**/*.html').map((file) => {
-          const name = file.replace(/^src\//, '').replace(/\.html$/, '');
-          return [name, resolve(__dirname, file)];
-        })
-      )
+      input: resolve(__dirname, 'src/index.html')
     }
   },
   preview: { outDir: resolve(__dirname, 'dist'), port: 3000, open: true },

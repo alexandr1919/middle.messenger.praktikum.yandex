@@ -7,7 +7,11 @@ export type HttpOptions = {
   withCredentials?: boolean;
 };
 
+export type HttpErrorResponse = {
+  reason?: string;
+};
+
 export type HttpResponse<T = unknown> = {
   status: number;
-  data: T;
+  data: T | HttpErrorResponse;
 };

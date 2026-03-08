@@ -1,1 +1,1 @@
-export const BaseHomeLayoutTemplate = `{{{sidebar}}}{{{content}}}`;
+export const BaseHomeLayoutTemplate = `{{{sidebar}}}{{{content}}}{{{modal}}}`;

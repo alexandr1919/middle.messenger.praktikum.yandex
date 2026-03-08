@@ -1,7 +1,7 @@
 .button {
     display: block;
-    padding: 8px;
-    width: 120px;
+    padding: 8px 16px;
+    min-width: 120px;
     text-align: center;
     border: none;
     color: var(--color-base-font);
@@ -9,4 +9,17 @@
     cursor: pointer;
     text-decoration: none;
     background-color: var(--color-secondary-background);
+}
+
+.button:disabled {
+    background-color: color-mix(in srgb, var(--color-secondary-background), transparent 50%);
+    cursor: not-allowed;
+}
+
+.button--round {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 100%;
+    padding: 4px;
+    font-size: 16px;
 }

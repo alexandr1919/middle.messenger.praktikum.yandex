@@ -15,14 +15,14 @@ export class EventBus {
 
   off(event: string, callback: ListenerCallback) {
     if (!this.listeners[event]) {
-      throw new Error(`No event found: ${event}`);
+      return;
     }
     this.listeners[event] = this.listeners[event].filter((listener: ListenerCallback) => listener !== callback);
   }
 
   emit(event: string, ...args: unknown[]) {
     if (!this.listeners[event]) {
-      throw new Error(`No event found: ${event}`);
+      return;
     }
     this.listeners[event].forEach((listener) => listener(...args));
   }
