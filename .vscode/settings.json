@@ -1,7 +1,10 @@
 {
-    "css.format.preserveNewLines": true,
-    "css.format.enable": false,
-    "css.format.newlineBetweenSelectors": true,
-    "css.format.newlineBetweenRules": true,
-    "files.insertFinalNewline": true
+  "css.format.preserveNewLines": true,
+  "css.format.enable": false,
+  "css.format.newlineBetweenSelectors": true,
+  "css.format.newlineBetweenRules": true,
+  "files.insertFinalNewline": true,
+  "mochaExplorer.files": "src/**/*.test.ts",
+  "mochaExplorer.require": [],
+  "mochaExplorer.mochaPath": "node_modules/.bin/mocha"
 }
