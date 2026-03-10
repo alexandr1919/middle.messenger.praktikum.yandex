@@ -9,12 +9,18 @@ Tools:
 - Prettier — code formatting
 - Stylelint — CSS linting
 - PostCSS — CSS processing
+- Mocha + Chai — testing
+- Husky — pre-commit hooks
 
 Run dev server: 'npm run dev'
 
 Run preview and server: 'npm run start'
 
 Run build: 'npm run build'
+
+Run tests: 'npm test'
+
+Run linter: 'npm run lint'
 
 Netlify domain: https://whimsical-brigadeiros-55dece.netlify.app
 
